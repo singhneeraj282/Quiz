@@ -1,4 +1,4 @@
-package com.app.tera.model;
+package com.app.tera.quizData.model;
 
 import lombok.Getter;
 import lombok.Setter;

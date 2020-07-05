@@ -1,16 +1,15 @@
-package com.app.tera.controller;
+package com.app.tera.quizData.controller;
 
-import com.app.tera.model.Quiz;
-import com.app.tera.service.QuizDataService;
+import com.app.tera.quizData.model.Quiz;
+import com.app.tera.quizData.service.QuizDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/quiz")
+@RestController("com/app/tera/quiz")
 public class QuizDataController {
 
     @Autowired

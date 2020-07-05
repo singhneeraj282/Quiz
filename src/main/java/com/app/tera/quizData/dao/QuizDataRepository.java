@@ -1,8 +1,7 @@
-package com.app.tera.dao;
+package com.app.tera.quizData.dao;
 
-import com.app.tera.model.Quiz;
+import com.app.tera.quizData.model.Quiz;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository

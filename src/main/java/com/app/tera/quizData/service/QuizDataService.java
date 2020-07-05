@@ -1,7 +1,7 @@
-package com.app.tera.service;
+package com.app.tera.quizData.service;
 
-import com.app.tera.dao.QuizDataRepository;
-import com.app.tera.model.Quiz;
+import com.app.tera.quizData.dao.QuizDataRepository;
+import com.app.tera.quizData.model.Quiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

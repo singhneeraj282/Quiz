@@ -69,3 +69,12 @@ use springsecurity [90079-200]
 2020-06-27 21:03:12 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INFORMATION_SCHEMA[*].ROLES"; expected "INSERT"; SQL statement:
 INFORMATION_SCHEMA.ROLES [42001-200]
+2020-07-05 19:44:13 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USERS (1[*],TRUE,'singhneeraj.282@gmail.com','singh','neeraj','$2y$12$WtjHpoZFx.UfR/z8pw22GuFxeicwln1xZCCNlXr99AcTpqmhomOMu','admin')"; expected "identifier"; SQL statement:
+insert into USERS (1,true,'singhneeraj.282@gmail.com','singh','neeraj','$2y$12$WtjHpoZFx.UfR/z8pw22GuFxeicwln1xZCCNlXr99AcTpqmhomOMu','admin') [42001-200]
+2020-07-05 19:46:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USER_ROLE VALUES[*]"; expected "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+insert into user_role values [42001-200]
+2020-07-05 19:58:02 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SLECT[*] * FROM USERS"; expected "SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+slect * from users [42001-200]

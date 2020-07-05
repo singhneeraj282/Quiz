@@ -1,4 +1,4 @@
-package com.app.tera.config;
+package com.app.tera.customException;
 
 import org.json.JSONObject;
 import org.springframework.security.access.AccessDeniedException;

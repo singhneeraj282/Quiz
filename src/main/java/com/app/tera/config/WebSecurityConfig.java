@@ -44,8 +44,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.
                 authorizeRequests()
-               // .antMatchers("/**").permitAll()
+                .antMatchers("/h2-console/**","/swagger.json","/v2/api-docs", "/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/webjars/**").permitAll()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/com/tera/app/authenticate").permitAll()
                 .anyRequest().authenticated()
                 /*.and()
                     .formLogin()*/
@@ -61,12 +62,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    @Override
+    /*@Override
     public void configure(org.springframework.security.config.annotation.web.builders.WebSecurity web) throws Exception {
         web
                 .ignoring()
                 .antMatchers("/h2-console/**","/v2/api-docs", "/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/webjars/**");
-    }
+    }*/
 
     @Bean
     PasswordEncoder passwordEncoder() {

@@ -31,20 +31,24 @@ public class SpringFoxConfig {
     }
 
     private ApiKey apiKey() {
-        return new ApiKey("apiKey", "Authorization", "header");
+        return new ApiKey("JWT", "Authorization", "header");
     }
 
-    private SecurityContext securityContext() {
+    @Bean
+    SecurityContext securityContext() {
         return SecurityContext.builder()
                 .securityReferences(defaultAuth())
-                .forPaths(PathSelectors.regex("/api.*"))
+                .forPaths(PathSelectors.any())
                 .build();
     }
-    private List<SecurityReference> defaultAuth() {
-        AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
+
+    List<SecurityReference> defaultAuth() {
+        AuthorizationScope authorizationScope
+                = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
-        return Arrays.asList(new SecurityReference("apiKey", authorizationScopes));
+        return Arrays.asList(
+                new SecurityReference("JWT", authorizationScopes));
     }
 
     private ApiInfo metadata() {

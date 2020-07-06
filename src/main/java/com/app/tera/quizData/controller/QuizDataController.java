@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/com/app/tera/")
+@RequestMapping("/com/app/tera")
 public class QuizDataController {
 
     @Autowired
     QuizDataService quizDataService;
 
-    @GetMapping("data")
+    @GetMapping("/data")
     public ResponseEntity<String> getALlData(){
         return new ResponseEntity("hello", HttpStatus.OK);
     }
 
-    @GetMapping("data/{id}")
+    @GetMapping("/data/{id}")
     public ResponseEntity<Quiz> getALlData(@PathVariable Long id){
         return new ResponseEntity(quizDataService.findById(id).isPresent() ? quizDataService.findById(id).get(): null , HttpStatus.OK);
     }

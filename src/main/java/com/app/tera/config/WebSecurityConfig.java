@@ -47,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/h2-console/**","/swagger.json","/v2/api-docs", "/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/webjars/**").permitAll()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
                 .antMatchers("/com/tera/app/authenticate").permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().authenticated().and().cors()
                 /*.and()
                     .formLogin()*/
                 .and()
